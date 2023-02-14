@@ -1,1 +1,14 @@
-<paste log output from Kubernetes-mediated prediction, here>
+Error from server (AlreadyExists): pods "ml-api" already exists
+NAME     READY   STATUS    RESTARTS   AGE
+ml-api   1/1     Running   0          28s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+voclabs:~/environment/project-ml-microservice-kubernetes (main) $ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
