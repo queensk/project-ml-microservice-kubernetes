@@ -22,6 +22,21 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 **The final implementation of the project will showcase your abilities to operationalize production microservices.**
 
 ---
+## file structure
+| File Name         | Description                                                                                 |
+|-------------------|---------------------------------------------------------------------------------------------|
+| .circleci         | For the CircleCI build server                                                               |
+| model_data        | Contains the pretrained sklearn model and housing csv files                                 |
+| output_txt_files  | Contains sample output logs from running ./run_docker.sh and ./run_kubernetes.sh            |
+| app.py            | Contains the flask app                                                                      |
+| Dockerfile        | Contains instructions to containerize the application                                       |
+| Makefile          | Contains instructions for environment setup and lint tests                                  |
+| requirements.txt  | List of required dependencies                                                               |
+| run_docker.sh     | Bash script to build Docker image and run the application in a Docker container             |
+| upload_docker.sh  | Bash script to upload the built Docker image to Dockerhub                                   |
+| run_kubernetes.sh | Bash script to run the application in a Kubernetes cluster                                  |
+| make_prediction.sh| Bash script to make predictions against the Docker container and k8s cluster                |
+| README.md         | This README file                                                                            |
 
 ## Setup the Environment
 
