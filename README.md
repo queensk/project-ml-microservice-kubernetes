@@ -45,6 +45,29 @@ source .devops/bin/activate
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
+    1. run `make lint` to ensure the docker file is well formatted
+
+    2. `bash run_docker.sh` or `./run_docker.sh` to run the docker container
+
+    3. test endpoint using `./make_prediction.sh`
+
 * Setup and Configure Kubernetes locally
+1. stat pods by running `minikube start`
+
+2. upload docker container to the pods using `./run_kubernetes.sh`
+
 * Create Flask app in Container
+1. Create a docker container `docker build --tag=ID/path`
+2. List docker images `docker image ls`
+3. Run docker image `docker run -p 8000:80 ID/path`
 * Run via kubectl
+Run the Docker Hub container with kubernetes
+```
+kubectl run ml-api\
+	--image=ID/path\
+	--port=80 --labels app=ml-api
+```
+
+List kubernetes pods `kubectl get pods`
+
+Forward the container port to a host `kubectl port-forward ml-api 8000:80`
